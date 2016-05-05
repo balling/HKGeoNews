@@ -5,6 +5,6 @@ export const headerBar = {
   textAlign: 'center',
   backgroundColor: DARK_GREY,
   color: 'white',
-  fontFamily: 'roboto',
+  fontFamily: '"Noto Sans TC", sans-serif',
   fontSize: 'xx-large',
 };

@@ -3,7 +3,7 @@ import { headerBar } from './header-style';
 
 const Header = () => (
   <div style={headerBar}>
-    HK GEO NEWS
+    香港新聞地圖
   </div>
 );
 

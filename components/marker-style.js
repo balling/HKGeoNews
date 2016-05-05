@@ -15,7 +15,6 @@ export const marker = {
   borderRadius: SIZE,
   backgroundColor: LIGHT_BLUE,
   textAlign: 'center',
-  color: DARK_GREY,
   fontSize: 16,
   fontWeight: 'bold',
   padding: 4,
@@ -28,6 +27,8 @@ export const markerHover = {
 };
 
 export const tooltip = {
+    fontFamily: '"Noto Sans TC", sans-serif',
+    fontWeight: 300,
     background: OFF_WHITE,
     zIndex: 1000000,
     position: 'absolute',

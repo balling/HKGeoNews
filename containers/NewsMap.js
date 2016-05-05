@@ -6,6 +6,7 @@ const mapStateToProps = (state) => ({
     id: i,
     link: n[0],
     title: n[1],
+    active: state.activeMarker == i,
     ...n[3].location
   }))
 });

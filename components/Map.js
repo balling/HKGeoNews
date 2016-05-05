@@ -2,8 +2,9 @@ import React, { PropTypes } from 'react';
 import GoogleMap from 'google-map-react';
 import { mapContainer, map } from './map-style';
 import Marker from './Marker';
+import { showMarker } from './../actions/index';
 
-const MarkerMap = ({ center, markers, zoom }) => (
+const MarkerMap = ({ center, markers, zoom, dispatch }) => (
   <div style={mapContainer}>
     <div style={map}>
       <GoogleMap
@@ -13,6 +14,8 @@ const MarkerMap = ({ center, markers, zoom }) => (
         }}
         center={center}
         zoom={zoom}
+        onChildClick={(key, childProps) => dispatch(showMarker(childProps))}
+        onChildMouseEnter={(key, childProps) => dispatch(showMarker(childProps))}
       >
       {markers.map(marker =>
         <Marker
@@ -27,6 +30,7 @@ const MarkerMap = ({ center, markers, zoom }) => (
 
 MarkerMap.propTypes = {
   center: PropTypes.array,
+  dispatch: PropTypes.func,
   markers: PropTypes.array,
   zoom: PropTypes.number,
 };

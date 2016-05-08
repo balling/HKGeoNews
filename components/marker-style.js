@@ -49,3 +49,10 @@ export const anchor = {
     textDecoration: 'none',
     color: DARK_GREY,
 };
+
+export const timestamp = {
+  fontSize: '14px',
+  color: OFF_WHITE,
+  backgroundColor: ORANGE,
+  textAlign: 'right',
+}

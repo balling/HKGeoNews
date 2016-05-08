@@ -12,8 +12,8 @@ const MarkerMap = ({ center, markers, zoom, dispatch }) => (
           key: 'AIzaSyDDBrhr-8SGKa6t_O7IUmLzSTqOj89gQwE',
           language: 'zh-HK',
         }}
-        center={center}
-        zoom={zoom}
+        defaultCenter={center}
+        defaultZoom={zoom}
         onChildClick={(key, childProps) => dispatch(showMarker(childProps))}
         onChildMouseEnter={(key, childProps) => dispatch(showMarker(childProps))}
       >

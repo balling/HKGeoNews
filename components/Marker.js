@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import { marker, markerHover, tooltip, tooltipHover, anchor } from './marker-style';
+import { marker, markerHover, tooltip, tooltipHover, anchor, timestamp } from './marker-style';
 
-const Marker = ({ active, link, title }) => {
+const Marker = ({ active, link, title, time }) => {
   const style = active ? markerHover : marker;
   const tooltipStyle = active ? tooltipHover : tooltip;
 
@@ -12,6 +12,7 @@ const Marker = ({ active, link, title }) => {
         null}
       <div style={tooltipStyle}>
         <a target="_blank" href={link} style={anchor}>{title}</a>
+        <div style={timestamp}>{time}</div>
       </div>
     </div>
   );
@@ -20,6 +21,7 @@ const Marker = ({ active, link, title }) => {
 Marker.propTypes = {
   active: PropTypes.bool,
   link: PropTypes.string,
+  time: PropTypes.string,
   title: PropTypes.string,
 };
 

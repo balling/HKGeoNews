@@ -1,18 +1,23 @@
 import React, { PropTypes } from 'react';
-import { marker, markerHover, tooltip, tooltipHover, anchor, timestamp } from './marker-style';
+import * as style from './marker-style';
 
-const Marker = ({ active, link, title, time }) => {
-  const style = active ? markerHover : marker;
-  const tooltipStyle = active ? tooltipHover : tooltip;
+const Marker = ({ active, link, title, time, location }) => {
+  const markerStyle = active ? style.markerHover : style.marker;
+  const tooltipStyle = active ? style.tooltipHover : style.tooltip;
 
   return (
-    <div style={style}>
+    <div style={markerStyle}>
       {active ?
         <a target="_blank" href={link} style={{ opacity: 0 }}>LINK</a> :
         null}
       <div style={tooltipStyle}>
-        <a target="_blank" href={link} style={anchor}>{title}</a>
-        <div style={timestamp}>{time}</div>
+        <a target="_blank" href={link} style={style.anchor}>{title}</a>
+        <div style={style.timestamp}>
+          <span style={{ float: 'left' }}>
+            <i className="fa fa-map-marker" style={{ padding: '0 10px' }} />{location}
+          </span>
+          {time}
+        </div>
       </div>
     </div>
   );
@@ -21,6 +26,7 @@ const Marker = ({ active, link, title, time }) => {
 Marker.propTypes = {
   active: PropTypes.bool,
   link: PropTypes.string,
+  location: PropTypes.string,
   time: PropTypes.string,
   title: PropTypes.string,
 };

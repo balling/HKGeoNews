@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MarkerMap from '../components/Map';
+import MarkerMap from './../components/Map';
 
 const mapStateToProps = (state) => ({
   markers: state.news.map((n, i) => ({

@@ -18,10 +18,7 @@ function newsFetched(json) {
 export function fetchNews() {
   return (dispatch) =>
     fetch('http://hkschemestudy.ddns.net/index.php?r=geo-news')
-      .then(response => {
-        console.log(response);
-        return response.json();
-      })
+      .then(response => response.json())
       .then(json => dispatch(newsFetched(json)))
       .catch(window.console.log.bind(window.console));
 }

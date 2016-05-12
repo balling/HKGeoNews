@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import GoogleMap from 'google-map-react';
 import { mapContainer, map } from './map-style';
 import Marker from './Marker';
-import { showMarker } from './../actions/index';
+import { showMarker, pinMarker } from './../actions/index';
 
 const MarkerMap = ({ center, markers, zoom, dispatch }) => (
   <div style={mapContainer}>
@@ -14,12 +14,14 @@ const MarkerMap = ({ center, markers, zoom, dispatch }) => (
         }}
         defaultCenter={center}
         defaultZoom={zoom}
-        onChildClick={(key, childProps) => dispatch(showMarker(childProps))}
+        onChildClick={(key, childProps) => dispatch(pinMarker(childProps))}
         onChildMouseEnter={(key, childProps) => dispatch(showMarker(childProps))}
       >
       {markers.map(marker =>
         <Marker
           key={marker.id}
+          onClick={() => dispatch(pinMarker(marker))}
+          onClose={() => dispatch(pinMarker({ id: -1 }))}
           {...marker}
         />
       )}

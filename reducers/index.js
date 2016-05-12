@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import news from './news';
-import activeMarker from './activeMarker';
+import marker from './marker';
 
 const geoNewsApp = combineReducers({
-  activeMarker,
+  marker,
   news,
 });
 

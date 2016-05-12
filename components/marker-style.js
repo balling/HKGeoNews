@@ -1,4 +1,4 @@
-import { LIGHT_BLUE, DARK_GREY, ORANGE, OFF_WHITE } from './common-styles';
+import { LIGHT_BLUE, DARK_GREY, ORANGE, OFF_WHITE, YELLOW } from './common-styles';
 
 export const SIZE = 10;
 
@@ -45,6 +45,11 @@ export const tooltipHover = {
     visibility: 'visible',
 };
 
+export const tooltipPinned = {
+    ...tooltipHover,
+    zIndex: 1000001,
+};
+
 export const anchor = {
     textDecoration: 'none',
     color: DARK_GREY,
@@ -55,4 +60,9 @@ export const timestamp = {
   color: OFF_WHITE,
   backgroundColor: ORANGE,
   textAlign: 'right',
+}
+
+export const timestampPinned = {
+  ...timestamp,
+  backgroundColor: YELLOW,
 }

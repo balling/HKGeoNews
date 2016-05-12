@@ -7,7 +7,8 @@ const mapStateToProps = (state) => ({
     link: n[0],
     title: n[1],
     location: n[2],
-    active: state.activeMarker == i,
+    active: state.marker.active == i,
+    pinned: state.marker.pinned == i,
     time: n[4],
     ...n[3].location
   }))

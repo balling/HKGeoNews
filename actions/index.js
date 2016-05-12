@@ -1,9 +1,14 @@
 import fetch from 'isomorphic-fetch';
 
 export const SHOW_MARKER = 'SHOW_MARKER';
+export const PIN_MARKER = 'PIN_MARKER';
 
 export function showMarker({ id }) {
   return { type: SHOW_MARKER, id };
+}
+
+export function pinMarker({ id }) {
+  return { type: PIN_MARKER, id };
 }
 
 export const NEWS_FETCHED = 'NEWS_FETCHED';

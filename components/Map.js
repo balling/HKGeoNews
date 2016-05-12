@@ -20,6 +20,7 @@ const MarkerMap = ({ center, markers, zoom, dispatch }) => (
       {markers.map(marker =>
         <Marker
           key={marker.id}
+          onTouchEnd={() => dispatch(pinMarker(marker))}
           onClick={() => dispatch(pinMarker(marker))}
           onClose={() => dispatch(pinMarker({ id: -1 }))}
           {...marker}

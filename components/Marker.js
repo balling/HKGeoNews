@@ -8,7 +8,7 @@ const Marker = ({ active, pinned, link, title, time, location, onClose }) => {
   return (
     <div style={markerStyle}>
       <div style={pinned ? style.tooltipPinned : tooltipStyle}>
-        {pinned ? <i className="fa fa-times" onClick={onClose} /> : null}
+        {pinned ? <i className="fa fa-times" onClick={onClose} onTouchEnd={onClose} /> : null}
         <a target="_blank" href={link} style={style.anchor}>{title}</a>
         <div style={pinned ? style.timestampPinned : style.timestamp}>
           <span style={{ float: 'left' }}>

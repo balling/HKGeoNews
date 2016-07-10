@@ -22,7 +22,7 @@ function newsFetched(json) {
 
 export function fetchNews() {
   return (dispatch) =>
-    fetch('http://hkschemestudy.ddns.net/index.php?r=geo-news')
+    fetch('http://nwscedu.ddns.net/index.php?r=geo-news')
       .then(response => response.json())
       .then(json => dispatch(newsFetched(json)))
       .catch(window.console.log.bind(window.console));
